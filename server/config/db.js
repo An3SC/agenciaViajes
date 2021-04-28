@@ -14,6 +14,7 @@ const db = new Sequelize(
             timestamps: false,
         },
         pool: {
+            connectionString: process.env.DATABASE_URL,
             max: 5,
             min: 0,
             acquire: 3000,
