@@ -1,6 +1,7 @@
 import express from 'express';
 import router from './routes/index.js';
 import db from './config/db.js';
+import path from 'path';
 
 import dotenv from 'dotenv';
 dotenv.config({ path: 'variables.env' });
@@ -13,7 +14,9 @@ db.authenticate()
     .catch((error) => console.log(error));
 
 // Habilitar PUG
+const __dirname = path.resolve(path.dirname(''));
 app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'server/views'));
 
 // Obtener el año actual
 app.use((req, res, next) => {
