@@ -19,5 +19,5 @@
 -   Siempre que se hagan cambios en los archivos del servidor hay que reescribirlo del siguiente modo:
     1. `git add .`
     2. `git commit -m "comentario"`
-    3. `git push -u origin main`
+    3. `git push` o bien `git push -u origin main`
     4. `git push production main`
