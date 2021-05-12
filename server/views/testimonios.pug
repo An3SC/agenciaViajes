@@ -4,13 +4,13 @@ block contenido
     main.container.mt-5
         h1.text-center.mt-5 #{pagina}
 
-        blockquote.text-center  Lee sobre nuestros clientes y sus experiencias 
+        blockquote.text-center  Read about our clients and their experiences 
 
         include ./layouts/bloqueTestimonios
 
         .row
             .col-md-12
-                h2.d-block.w-100.text-center Agrega un testimonio 
+                h2.d-block.w-100.text-center Add a testimony 
 
                 if(errores)
                     each error in errores 
@@ -20,13 +20,13 @@ block contenido
                 .col-md-8 
                     form(action="/testimonios" method="POST")
                         .form-group 
-                            label(for="nombre") Nombre
-                            input#nombre(type="text", placeholder="Tu nombre", name="nombre", value=nombre class="form-control")
+                            label(for="nombre") Name
+                            input#nombre(type="text", placeholder="Your name", name="nombre", value=nombre class="form-control")
                         .form-group 
                             label(for="email") Email 
-                            input#email(type="email", placeholder="Tu email", name="email", value=email class="form-control")
+                            input#email(type="email", placeholder="Your email", name="email", value=email class="form-control")
                         .form-group 
-                            label(for="mensaje") Mensaje
+                            label(for="mensaje") Message
                             textarea#mensaje(name="mensaje", cols="30", rows="10" class="form-control")=mensaje
                         
-                        input.btn.btn-success.btn-block(type="submit")
+                        input.btn.btn-success.btn-block(type="submit", value='Send')

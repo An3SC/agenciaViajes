@@ -8,15 +8,15 @@ const guardarTestimonio = async (req, res) => {
     const errores = [];
 
     if (nombre.trim() === '') {
-        errores.push({ mensaje: 'El nombre está vacío' });
+        errores.push({ mensaje: 'Name is empty' });
     }
 
     if (email.trim() === '') {
-        errores.push({ mensaje: 'El email está vacío' });
+        errores.push({ mensaje: 'Email is empty' });
     }
 
     if (mensaje.trim() === '') {
-        errores.push({ mensaje: 'El mensaje está vacío' });
+        errores.push({ mensaje: 'Message is empty' });
     }
 
     if (errores.length > 0) {
@@ -25,7 +25,7 @@ const guardarTestimonio = async (req, res) => {
 
         // Mostrar la vista con errores
         res.render('testimonios', {
-            pagina: 'Testimonios',
+            pagina: 'Testimonials',
             errores,
             nombre,
             email,
